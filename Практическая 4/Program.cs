@@ -43,6 +43,14 @@ namespace Практическая_4
             note4.position = 4;
             notes.Add(note4);
 
+            Заметки note5 = new Заметки();
+
+            note5.title = "Поехать на дачу";
+            note5.content = "Там водится много котиков";
+            note5.date = dateTime.AddDays(+3);
+            note5.position = 3;
+            notes.Add(note5);
+
             DateTime date = DateTime.Now;
             int position = 1;
 
@@ -91,6 +99,7 @@ namespace Практическая_4
                     {
                         if (note.position == position)
                         {
+                            Console.Clear();
                             Console.WriteLine("Информация о заметке: ");
                             Console.WriteLine("Название: ");
                             Console.WriteLine(note.title);
