@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.ExceptionServices;
 
 namespace Практическая_4
@@ -27,7 +28,7 @@ namespace Практическая_4
             note2.position = 2;
             notes.Add(note2);
 
-            Заметки note3 = new Заметки();
+            Заметки note3 = new Заметки();  
 
             note3.title = "Поспать с котиком";
             note3.content = "Котики - милые существа";
@@ -93,21 +94,50 @@ namespace Практическая_4
                 Console.SetCursorPosition(0, position);
                 Console.WriteLine("->");
 
-                if (Key.Key == ConsoleKey.Enter)
+                if (position == 1 & note.date.Date == date.Date)
                 {
-                    foreach (Заметки pos in notes)
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
                     {
-                        if (note.position == position)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Информация о заметке: ");
-                            Console.WriteLine("Название: ");
-                            Console.WriteLine(note.title);
-                            Console.WriteLine("Содержание: ");
-                            Console.WriteLine(note.content);
-                        }
+                        Console.Clear();
+                        Console.WriteLine(note.title);
+                        Console.WriteLine(note.content);    
                     }
-
+                }
+                else if (position == 1 & date.Date == note2.date.Date)
+                {
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(note2.title);
+                        Console.WriteLine(note2.content);
+                    }
+                }
+                else if (position == 2 & date.Date == note3.date.Date)
+                {
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(note3.title);
+                        Console.WriteLine(note3.content);
+                    }
+                }
+                else if (position == 3 & date.Date == note4.date.Date)
+                {
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(note4.title);
+                        Console.WriteLine(note4.content);
+                    }
+                }
+                else if (position == 4 & date.Date == note5.date.Date)
+                {
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(note5.title);
+                        Console.WriteLine(note5.content);
+                    }
                 }
             }
         }
